@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-23 12:22:03.173153",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contact_person",
+  "contact_number",
+  "send_sms",
+  "column_break_npie",
+  "designation",
+  "email",
+  "send_mail"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact Person",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Number",
+   "length": 10,
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_sms",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Send SMS"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_mail",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Send Mail"
+  },
+  {
+   "fieldname": "column_break_npie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contact_person.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-23 12:59:03.052364",
+ "modified_by": "Administrator",
+ "module": "Envision Accounts",
+ "name": "Contact Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
