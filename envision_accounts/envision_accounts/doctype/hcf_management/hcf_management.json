@@ -1,0 +1,378 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-23 11:20:21.959830",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hcf_registration_details_section",
+  "registration_date",
+  "membership_id",
+  "column_break_elgu",
+  "service_start_date",
+  "company",
+  "amended_from",
+  "disabled",
+  "hcfs_name_and_address_section",
+  "hcf_type",
+  "hcfs_name",
+  "hcfs_address",
+  "hcfs_detailed_address",
+  "column_break_hgzr",
+  "hcf_category",
+  "hcf_type_government",
+  "billing_address",
+  "billing_detailed_address",
+  "contact_details_section",
+  "contact_details",
+  "beds_details_section",
+  "number_of_general_beds",
+  "number_of_icu_beds",
+  "number_of_special_beds",
+  "number_of_total_beds",
+  "column_break_laae",
+  "number_of_maternity_beds",
+  "number_of_nicu_beds",
+  "number_of_other_beds",
+  "number_of_chargeable_beds",
+  "mpcb_details_section",
+  "mpcb_id",
+  "mpcb_issue_date",
+  "number_of_beds",
+  "column_break_vtzr",
+  "authorisation_number",
+  "mpcb_expiry_date",
+  "purchase__work_order_details_section",
+  "po_number",
+  "po_validity",
+  "column_break_yonv",
+  "po_date",
+  "remarks",
+  "billing_settings_section",
+  "billing_type",
+  "gstin",
+  "pan",
+  "column_break_xtnw",
+  "tax_id",
+  "tax_category",
+  "tax_withholding_category"
+ ],
+ "fields": [
+  {
+   "fieldname": "hcf_registration_details_section",
+   "fieldtype": "Section Break",
+   "label": "HCF Registration Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "column_break_elgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "service_start_date",
+   "fieldtype": "Date",
+   "label": "Service Start Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "HCF Management",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "membership_id",
+   "fieldtype": "Link",
+   "label": "Membership ID",
+   "link_filters": "[[\"Customer\",\"disabled\",\"=\",0]]",
+   "options": "Customer"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "beds_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bed(s) Details"
+  },
+  {
+   "fieldname": "mpcb_details_section",
+   "fieldtype": "Section Break",
+   "label": "MPCB Details"
+  },
+  {
+   "fieldname": "mpcb_id",
+   "fieldtype": "Data",
+   "label": "MPCB ID"
+  },
+  {
+   "fieldname": "mpcb_issue_date",
+   "fieldtype": "Date",
+   "label": "MPCB Issue Date"
+  },
+  {
+   "fieldname": "number_of_beds",
+   "fieldtype": "Int",
+   "label": "Number of Beds",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_vtzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorisation_number",
+   "fieldtype": "Data",
+   "label": "Authorisation Number"
+  },
+  {
+   "fieldname": "mpcb_expiry_date",
+   "fieldtype": "Date",
+   "label": "MPCB Expiry Date"
+  },
+  {
+   "fieldname": "purchase__work_order_details_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase / Work Order Details"
+  },
+  {
+   "fieldname": "po_number",
+   "fieldtype": "Data",
+   "label": "P.O. Number"
+  },
+  {
+   "fieldname": "po_validity",
+   "fieldtype": "Date",
+   "label": "P.O. Validity"
+  },
+  {
+   "fieldname": "column_break_yonv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "P.O. Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Contact Details"
+  },
+  {
+   "fieldname": "billing_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Billing Settings"
+  },
+  {
+   "default": "None",
+   "fetch_from": "membership_id.custom_billing_type",
+   "fieldname": "billing_type",
+   "fieldtype": "Select",
+   "label": "Billing Type",
+   "options": "None\nMonthly Weight wise\nOther Monthly Weight wise\nMonthly Fixed\nDaily Fixed\nMonthly / Bed wise\nDay / Bed wise\nMonthly Advance\nOther Monthly Fixed"
+  },
+  {
+   "fieldname": "tax_category",
+   "fieldtype": "Link",
+   "label": "Tax Category",
+   "options": "Tax Category"
+  },
+  {
+   "fetch_from": "membership_id.gstin",
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "column_break_xtnw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  },
+  {
+   "fieldname": "tax_withholding_category",
+   "fieldtype": "Link",
+   "label": "Tax Withholding Category",
+   "options": "Tax Withholding Category"
+  },
+  {
+   "fetch_from": "membership_id.pan",
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN"
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_general_beds",
+   "fieldtype": "Int",
+   "label": "Number of General Beds",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_laae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_maternity_beds",
+   "fieldtype": "Int",
+   "label": "Number of Maternity Beds",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_icu_beds",
+   "fieldtype": "Int",
+   "label": "Number of ICU Beds",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_special_beds",
+   "fieldtype": "Int",
+   "label": "Number of Special Beds",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_total_beds",
+   "fieldtype": "Int",
+   "label": "Number of Total Beds",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_nicu_beds",
+   "fieldtype": "Int",
+   "label": "Number of NICU Beds",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_other_beds",
+   "fieldtype": "Int",
+   "label": "Number of Other Beds",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_chargeable_beds",
+   "fieldtype": "Int",
+   "label": "Number of Chargeable Beds",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "hcfs_name_and_address_section",
+   "fieldtype": "Section Break",
+   "label": "HCF's Name and Address"
+  },
+  {
+   "fieldname": "hcf_type",
+   "fieldtype": "Select",
+   "label": "HCF Type"
+  },
+  {
+   "fieldname": "hcfs_name",
+   "fieldtype": "Data",
+   "label": "HCF's Name"
+  },
+  {
+   "fieldname": "hcfs_address",
+   "fieldtype": "Link",
+   "label": "HCF's Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_hgzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hcf_category",
+   "fieldtype": "Select",
+   "label": "HCF Category"
+  },
+  {
+   "fieldname": "hcf_type_government",
+   "fieldtype": "Select",
+   "label": "HCF Type (Government)"
+  },
+  {
+   "fieldname": "billing_address",
+   "fieldtype": "Link",
+   "label": "Billing Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "hcfs_detailed_address",
+   "fieldtype": "Small Text",
+   "label": "HCF's Detailed Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "billing_detailed_address",
+   "fieldtype": "Small Text",
+   "label": "Billing Detailed Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-10-23 18:15:07.421883",
+ "modified_by": "Administrator",
+ "module": "Envision Accounts",
+ "name": "HCF Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
